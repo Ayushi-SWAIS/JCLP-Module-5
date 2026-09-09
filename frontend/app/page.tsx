@@ -54,9 +54,8 @@ export default function Module5Dashboard() {
   };
 
   const handleLogout = () => {
-    sessionStorage.clear();
     localStorage.clear();
-    window.location.href = 'https://staging.jclg.swais.in/';
+    window.location.href = process.env.NEXT_PUBLIC_LOGIN_URL || "/";
   };
 
   const menuTabs = ['Dashboard', 'Students', 'Academics', 'AI Analysis', 'Progress', 'Reports'];
@@ -357,9 +356,9 @@ export default function Module5Dashboard() {
               )}
             </button>
           ))}
-          
+
           <div className="mt-auto pb-6">
-            <button 
+            <button
               onClick={handleLogout}
               className="w-full flex items-center justify-start gap-3 px-5 py-3.5 rounded-lg font-medium transition-all text-red-400 hover:bg-red-500/10 hover:text-red-300 border border-transparent hover:border-red-500/20"
             >
